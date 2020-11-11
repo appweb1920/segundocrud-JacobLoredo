@@ -14,7 +14,8 @@ class PiezasController extends Controller
      */
     public function index()
     {
-        //
+        $piezas=piezas::all();
+        return \view('welcome')->with('piezas',$piezas);
     }
 
     /**
@@ -35,7 +36,15 @@ class PiezasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pieza= new piezas();
+   
+        $pieza->Nombre=$request->NombreP;
+        $pieza->Descripcion=$request->DescripcionP;
+        $pieza->NumeroPiezas=$request->NPieza;
+        $pieza->CostoPieza=$request->CostoPiezas;
+        $pieza->save();
+        return \redirect()->back();
+
     }
 
     /**

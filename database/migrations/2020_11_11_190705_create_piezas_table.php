@@ -17,8 +17,8 @@ class CreatePiezasTable extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('Descripcion');
-            $table->integer('NumeroPiezas');
-            $table->float('CostoPieza');
+            $table->string('NumeroPiezas');
+            $table->string('CostoPieza');
             $table->timestamps();
         });
     }
