@@ -54,7 +54,7 @@
 								<td>{{$P->NumeroPiezas}}</td>
 								<td>{{$P->CostoPieza}}</td>
 								<td >
-									<a href="./EditarPuntoR/{{$P->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+									<a href="./EditarPieza/{{$P->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 									<a href="./EliminarP/{{$P->id}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 								</td>
 							</tr>
@@ -88,7 +88,7 @@
 						</div>
 						<div class="form-group">
 							<label>No.Piezas</label>
-							<input type="number" min="1" max="24"class="form-control" required name ='NPieza'>
+							<input type="number" min="1" class="form-control" required name ='NPieza'>
                         </div>
                         <div class="form-group">
 							<label>Costo por pieza</label>

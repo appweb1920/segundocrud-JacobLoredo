@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PiezasController@index');
 Route::post('/', 'PiezasController@store');
+
+Route::get('/EditarPieza/{id}','PiezasController@edit');
+Route::post('/ActualizarP/{id}','PiezasController@update');
+Route::get('/EliminarP/{id}','PiezasController@destroy');

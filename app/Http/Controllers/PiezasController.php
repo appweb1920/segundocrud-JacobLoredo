@@ -64,9 +64,10 @@ class PiezasController extends Controller
      * @param  \App\piezas  $piezas
      * @return \Illuminate\Http\Response
      */
-    public function edit(piezas $piezas)
+    public function edit($id)
     {
-        //
+      
+        return \view('EditarPieza')->with('piezas',piezas::find($id));
     }
 
     /**
@@ -76,9 +77,15 @@ class PiezasController extends Controller
      * @param  \App\piezas  $piezas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, piezas $piezas)
+    public function update(Request $request, $id)
     {
-        //
+        $pieza=piezas::find($id);
+        $pieza->Nombre=$request->NombreP;
+        $pieza->Descripcion=$request->DescripcionP;
+        $pieza->NumeroPiezas=$request->NPieza;
+        $pieza->CostoPieza=$request->CostoPiezas;
+        $pieza->save();
+        return \redirect('/');
     }
 
     /**
@@ -87,8 +94,11 @@ class PiezasController extends Controller
      * @param  \App\piezas  $piezas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(piezas $piezas)
+    public function destroy($id)
     {
-        //
+        $p=piezas::find($id);
+        //\dd($P);
+        $p->destroy(array('id',$id));
+        return \redirect('/');
     }
 }
